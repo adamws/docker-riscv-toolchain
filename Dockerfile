@@ -57,4 +57,4 @@ RUN wget https://raw.githubusercontent.com/riscv/riscv-openocd/riscv/contrib/60-
     
 USER root
 
-WORKDIR /home/risc
+WORKDIR /home/risc/freedom-e-sdk

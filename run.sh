@@ -1,4 +1,5 @@
 #!/bin/bash
+# convenience script for running riscv docker toolchain container
 
 FTDI_USB_INFO=$(lsusb | grep "0403:6010")
 
@@ -9,6 +10,7 @@ else
 	FTDI_DEVICE=$(echo $FTDI_USB_INFO | sed 's/.*Device \([0-9]*\).*/\1/')
 	FTDI_DEVICE_MOUNT="--device /dev/bus/usb/${FTDI_BUS}/${FTDI_DEVICE}"
 
+  # find better way to include tty device:
 	if [ -c /dev/ttyUSB1 ]; then
 		FTDI_TTY_MOUNT="--device /dev/ttyUSB1:/dev/ttyUSB1:rwm"
 	fi
